@@ -1,0 +1,39 @@
+{
+  "name": "jimbo-client",
+  "version": "0.0.0",
+  "description": "A hapi plugin for registering microservice clients",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zkochan/jimbo-client.git"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "hapi",
+    "jimbo",
+    "microservice",
+    "service",
+    "plugin"
+  ],
+  "author": {
+    "name": "Zoltan Kochan",
+    "email": "zoltan.kochan@gmail.com",
+    "url": "http://kochan.io"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org"
+  },
+  "bugs": {
+    "url": "https://github.com/zkochan/jimbo-client/issues"
+  },
+  "homepage": "https://github.com/zkochan/jimbo-client#readme",
+  "dependencies": {
+    "uva-amqp": "^0.5.1"
+  }
+}
