@@ -11,7 +11,7 @@ module.exports = function(plugin, opts, next) {
 
     client.register(opts.methods)
 
-    this.clients[opts.name] = client.methods
+    plugin.expose(opts.name, client.methods)
   })
 
   next()
