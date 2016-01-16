@@ -39,7 +39,7 @@
   "devDependencies": {
     "chai": "^3.4.1",
     "hapi": "^12.0.1",
-    "jimbo": "0.0.1",
+    "jimbo": "0.0.8",
     "mocha": "^2.3.4",
     "plugiator": "^0.1.1"
   }

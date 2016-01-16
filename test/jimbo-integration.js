@@ -51,7 +51,7 @@ describe('jimbo-client jimbo', function() {
           register: plugin,
         },
       ])
-      .then(server => {
+      .then(() => {
         expect(server.plugins['jimbo-client'].foo).to.exist
         expect(server.plugins['jimbo-client'].foo.bar).to.be.a('function')
       })
