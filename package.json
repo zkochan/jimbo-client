@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/zkochan/jimbo-client#readme",
   "dependencies": {
-    "uva-amqp": "^0.5.1"
+    "uva-amqp": "^0.5.3"
   },
   "devDependencies": {
     "chai": "^3.4.1",
