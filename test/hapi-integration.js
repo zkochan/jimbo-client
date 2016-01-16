@@ -2,6 +2,7 @@
 const expect = require('chai').expect
 const hapi = require('hapi')
 const hapiClient = require('../')
+const plugiator = require('plugiator')
 
 describe('jimbo-client hapi', function() {
   it('should decorate server', function() {
@@ -19,7 +20,7 @@ describe('jimbo-client hapi', function() {
   })
 
   it('should create jimbo client', function() {
-    function plugin(server, opts, next) {
+    let plugin = plugiator.create('plugin', (server, opts, next) => {
       server.client({
         name: 'foo',
         channel: 'foo',
@@ -27,10 +28,7 @@ describe('jimbo-client hapi', function() {
         methods: ['bar'],
       })
       next()
-    }
-    plugin.attributes = {
-      name: 'plugin',
-    }
+    })
 
     let server = new hapi.Server()
 
