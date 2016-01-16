@@ -1,5 +1,4 @@
 'use strict'
-
 const expect = require('chai').expect
 const jimbo = require('jimbo')
 const hapiClient = require('../')
@@ -54,7 +53,7 @@ describe('jimbo-client jimbo', function() {
           register: plugin,
         },
       ])
-      .then((server) => {
+      .then(server => {
         expect(server.plugins['jimbo-client'].foo).to.exist
         expect(server.plugins['jimbo-client'].foo.bar).to.be.a('function')
       })

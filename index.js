@@ -1,5 +1,4 @@
 'use strict'
-
 const uva = require('uva-amqp')
 
 module.exports = function(plugin, opts, next) {
