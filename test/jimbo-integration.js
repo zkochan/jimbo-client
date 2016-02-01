@@ -6,7 +6,7 @@ const plugiator = require('plugiator')
 
 describe('jimbo-client jimbo', function() {
   it('should decorate server', function() {
-    let server = new jimbo.Server()
+    let server = jimbo()
 
     server.connection({
       channel: 'foo',
@@ -31,11 +31,10 @@ describe('jimbo-client jimbo', function() {
         channel: 'foo',
         url: 'amqp://guest:guest@localhost:5672',
         methods: ['bar'],
-      })
-      next()
+      }, next)
     })
 
-    let server = new jimbo.Server()
+    let server = jimbo()
 
     server.connection({
       channel: 'foo',
@@ -52,8 +51,8 @@ describe('jimbo-client jimbo', function() {
         },
       ])
       .then(() => {
-        expect(server.plugins['jimbo-client'].foo).to.exist
-        expect(server.plugins['jimbo-client'].foo.bar).to.be.a('function')
+        expect(server.plugins.jimboClient.foo).to.exist
+        expect(server.plugins.jimboClient.foo.bar).to.be.a('function')
       })
   })
 })

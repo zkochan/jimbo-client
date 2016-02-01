@@ -27,8 +27,7 @@ describe('jimbo-client hapi', function() {
         channel: 'foo',
         url: 'amqp://guest:guest@localhost:5672',
         methods: ['bar'],
-      })
-      next()
+      }, next)
     })
 
     let server = new hapi.Server()
@@ -49,7 +48,7 @@ describe('jimbo-client hapi', function() {
   })
 
   it('should get response from jimbo server', function() {
-    let jimboServer = new jimbo.Server()
+    let jimboServer = jimbo()
 
     jimboServer.connection({
       url: 'amqp://guest:guest@localhost:5672',
@@ -71,8 +70,7 @@ describe('jimbo-client hapi', function() {
             channel: 'math',
             url: 'amqp://guest:guest@localhost:5672',
             methods: ['sum'],
-          })
-          next()
+          }, next)
         })
 
         let server = new hapi.Server()

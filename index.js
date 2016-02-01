@@ -2,15 +2,18 @@
 const uva = require('uva-amqp')
 
 module.exports = function(plugin, opts, next) {
-  plugin.decorate('server', 'client', function(opts) {
-    let client = new uva.Client({
+  plugin.decorate('server', 'client', function(opts, done) {
+    uva.client({
       channel: opts.channel,
       url: opts.url,
     })
+    .then(client => {
+      client.register(opts.methods)
 
-    client.register(opts.methods)
+      plugin.expose(opts.name, client.methods)
 
-    plugin.expose(opts.name, client.methods)
+      done()
+    })
   })
 
   next()
