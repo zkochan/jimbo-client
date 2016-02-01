@@ -4,7 +4,11 @@
   "description": "A hapi plugin for registering microservice clients",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/{**/,/}*.js"
+    "test": "mocha test/{**/,/}*.js",
+    "coverage": "istanbul cover _mocha test/{**/,/}*.js -- -R spec",
+    "precoveralls": "istanbul cover _mocha test/{**/,/}*.js --report lcovonly -- -R spec && npm i coveralls@2",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "postcoveralls": "rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
@@ -39,6 +43,7 @@
   "devDependencies": {
     "chai": "^3.4.1",
     "hapi": "^12.0.1",
+    "istanbul": "^0.4.2",
     "jimbo": "0.0.11",
     "mocha": "^2.3.4",
     "plugiator": "^0.1.1"
