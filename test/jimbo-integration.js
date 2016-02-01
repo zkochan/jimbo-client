@@ -10,7 +10,7 @@ describe('jimbo-client jimbo', function() {
 
     server.connection({
       channel: 'foo',
-      url: 'amqp://guest:guest@localhost:5672',
+      amqpURL: 'amqp://guest:guest@localhost:5672',
     })
 
     return server
@@ -29,7 +29,7 @@ describe('jimbo-client jimbo', function() {
       return server.client({
         name: 'foo',
         channel: 'foo',
-        url: 'amqp://guest:guest@localhost:5672',
+        amqpURL: 'amqp://guest:guest@localhost:5672',
         methods: ['bar'],
       })
     })
@@ -38,7 +38,7 @@ describe('jimbo-client jimbo', function() {
 
     server.connection({
       channel: 'foo',
-      url: 'amqp://guest:guest@localhost:5672',
+      amqpURL: 'amqp://guest:guest@localhost:5672',
     })
 
     return server

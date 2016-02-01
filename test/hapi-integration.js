@@ -5,7 +5,7 @@ const jimbo = require('jimbo')
 const hapiClient = require('../')
 const plugiator = require('plugiator')
 
-describe('jimbo-client hapi', function() {
+describe('hapi-client hapi', function() {
   it('should decorate server', function() {
     let server = new hapi.Server()
 
@@ -25,7 +25,7 @@ describe('jimbo-client hapi', function() {
       server.client({
         name: 'foo',
         channel: 'foo',
-        url: 'amqp://guest:guest@localhost:5672',
+        amqpURL: 'amqp://guest:guest@localhost:5672',
         methods: ['bar'],
       }, next)
     })
@@ -51,7 +51,7 @@ describe('jimbo-client hapi', function() {
     let jimboServer = jimbo()
 
     jimboServer.connection({
-      url: 'amqp://guest:guest@localhost:5672',
+      amqpURL: 'amqp://guest:guest@localhost:5672',
       channel: 'math',
     })
 
@@ -68,7 +68,7 @@ describe('jimbo-client hapi', function() {
           server.client({
             name: 'math',
             channel: 'math',
-            url: 'amqp://guest:guest@localhost:5672',
+            amqpURL: 'amqp://guest:guest@localhost:5672',
             methods: ['sum'],
           }, next)
         })

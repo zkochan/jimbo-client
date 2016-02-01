@@ -8,12 +8,11 @@ module.exports = function(plugin, opts, next) {
 
     uva.client({
       channel: opts.channel,
-      url: opts.url,
+      amqpURL: opts.amqpURL,
+      register: opts.methods,
     })
     .then(client => {
-      client.register(opts.methods)
-
-      plugin.expose(opts.name, client.methods)
+      plugin.expose(opts.name, client)
 
       deferred.cb()
     })
