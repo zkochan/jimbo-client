@@ -1,6 +1,6 @@
 {
   "name": "jimbo-client",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A hapi plugin for registering microservice clients",
   "main": "index.js",
   "scripts": {
