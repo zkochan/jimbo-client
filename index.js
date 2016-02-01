@@ -1,8 +1,11 @@
 'use strict'
 const uva = require('uva-amqp')
+const promiseResolver = require('promise-resolver')
 
 module.exports = function(plugin, opts, next) {
   plugin.decorate('server', 'client', function(opts, done) {
+    let deferred = promiseResolver.defer(done)
+
     uva.client({
       channel: opts.channel,
       url: opts.url,
@@ -12,8 +15,10 @@ module.exports = function(plugin, opts, next) {
 
       plugin.expose(opts.name, client.methods)
 
-      done()
+      deferred.cb()
     })
+
+    return deferred.promise
   })
 
   next()

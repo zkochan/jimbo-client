@@ -38,6 +38,7 @@
   },
   "homepage": "https://github.com/zkochan/jimbo-client#readme",
   "dependencies": {
+    "promise-resolver": "^3.0.0",
     "uva-amqp": "^0.6.0"
   },
   "devDependencies": {

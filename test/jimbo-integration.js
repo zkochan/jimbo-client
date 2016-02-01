@@ -25,13 +25,13 @@ describe('jimbo-client jimbo', function() {
   })
 
   it('should create jimbo client', function() {
-    let plugin = plugiator.create('plugin', (server, opts, next) => {
-      server.client({
+    let plugin = plugiator.create('plugin', (server, opts) => {
+      return server.client({
         name: 'foo',
         channel: 'foo',
         url: 'amqp://guest:guest@localhost:5672',
         methods: ['bar'],
-      }, next)
+      })
     })
 
     let server = jimbo()
