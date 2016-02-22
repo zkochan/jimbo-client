@@ -10,4 +10,4 @@ A hapi plugin for registering microservice clients
 
 ## License
 
-MIT
+MIT © [Zoltan Kochan](https://www.kochan.io)
